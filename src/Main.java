@@ -1,9 +1,6 @@
 import com.collection.producto.Producto;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,8 +10,8 @@ public class Main {
         arreglo.add("Programacion 3");
         //agregar en una posicion
         arreglo.add(1,"Add en una posicion");
-        //mostrar arreglo
 
+        //mostrar arreglo
         List<String> lista = new LinkedList<>();
         lista.add("Texto lista");
 
@@ -48,13 +45,21 @@ public class Main {
         productoList.add(new Producto("Azucar"));
         productoList.add(new Producto("Arroz"));
         productoList.add(new Producto("Te"));
+        productoList.add(new Producto("Azucar"));
+        productoList.add(new Producto("Arroz"));
+        productoList.add(new Producto("Te"));
         //toArray
         Producto[] lis = productoList.toArray(new Producto[productoList.size()]);
         for (Producto p: lis){
             System.out.println(p.getNombre());
         }
+        //¿Como ordenar un ArrayList?
+        System.out.println("Iterando usando stream...");
+        //productoList.forEach(System.out::println);
 
-        Producto[] productos = productoList.toArray(new Producto[productoList.size()]);
+        //Vamos ordenar usando Collections
+        Collections.sort(productoList);
+        productoList.forEach(System.out::println);
 
     }
 }

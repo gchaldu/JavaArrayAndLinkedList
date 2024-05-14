@@ -1,6 +1,6 @@
 package com.collection.producto;
 
-public class Producto {
+public class Producto implements Comparable<Producto>{
 
     private Integer id;
     private static Integer counter=0;
@@ -41,5 +41,10 @@ public class Producto {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Producto o) {
+        return this.nombre.compareTo(o.nombre);
     }
 }
